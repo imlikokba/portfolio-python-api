@@ -8,12 +8,10 @@
 </head>
 <body>
 
-  
     <video autoplay muted loop playsinline id="bg-video">
         <source src="background.mp4" type="video/mp4">
     </video>
 
-   
     <button onclick="toggleDarkMode()" class="btn toggle-btn">
         🌙 Dark Mode
     </button>
@@ -25,7 +23,9 @@
 <script>
 async function loadData() {
     try {
-        const res = await fetch("http://127.0.0.1:8000");
+
+        const res = await fetch("https://portfolio-python-api-oh2g.onrender.com");
+
         const data = await res.json();
 
         const card = document.getElementById("main-card");
@@ -63,15 +63,15 @@ async function loadData() {
             </ul>
         `;
     }
-    catch(err){
-        console.log(err);
+    catch(err) {
+        console.error(err);
 
         document.getElementById("main-card").innerHTML =
         "<h2>Failed to load API data.</h2>";
     }
 }
 
-function toggleDarkMode(){
+function toggleDarkMode() {
     document.body.classList.toggle("dark");
 }
 
