@@ -45,7 +45,7 @@ supabase-table.png
 ### \## 📸 API Endpoints Screenshot
 
 
-
+api-screenshot.png
 
 
 ### \## 🌐 Live Website
