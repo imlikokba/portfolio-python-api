@@ -38,7 +38,7 @@ Dynamic content handling via API
 
 
 
-!\[Supabase Table](supabase-table.png)
+supabase-table.png
 
 
 
@@ -46,7 +46,7 @@ Dynamic content handling via API
 
 
 
-!\[API Screenshot](api-screenshot.png)
+
 
 ### \## 🌐 Live Website
 
