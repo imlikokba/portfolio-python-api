@@ -50,7 +50,8 @@ api-screenshot.png
 
 ### \## 🌐 Live Website
 
-&#x20;https://imlikokba.github.io/portfolio-python-api/
+https://portfolio-python-api-839v-5e82hir2f-imlikokbas-projects.vercel.app
+
 
 
 
