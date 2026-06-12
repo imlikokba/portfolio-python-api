@@ -9,39 +9,65 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
     font-family:'Segoe UI',sans-serif;
     overflow:hidden;
+    background:#050816;
 }
 
+/* CYBER BACKGROUND */
 
-
-#bg-video{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
-}
-
-
-
-body::before{
-    content:"";
+.bg-animation{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,0.45);
-    z-index:-1;
-    transition:.4s;
+    z-index:-2;
+    background:
+    radial-gradient(circle at 20% 20%, rgba(0,255,255,.15), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(0,100,255,.15), transparent 30%),
+    linear-gradient(135deg,#050816,#0f172a,#111827);
 }
 
-body.dark::before{
-    background:rgba(0,0,0,0.7);
+.bg-animation::before{
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    top:-50%;
+    left:-50%;
+
+    background-image:
+    repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 60px,
+    rgba(0,255,255,.06) 61px
+    ),
+
+    repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 60px,
+    rgba(0,255,255,.06) 61px
+    );
+
+    animation:gridMove 18s linear infinite;
 }
 
+@keyframes gridMove{
+    from{
+        transform:rotate(45deg) translateY(0);
+    }
+    to{
+        transform:rotate(45deg) translateY(100px);
+    }
+}
 
+/* DARK MODE */
+
+body.dark{
+    background:black;
+}
+
+/* BUTTONS */
 
 .toggle-btn{
     position:fixed;
@@ -50,13 +76,12 @@ body.dark::before{
 }
 
 .btn{
-    display:inline-block;
     background:#2563eb;
     color:white;
     text-decoration:none;
-    padding:12px 20px;
     border:none;
     border-radius:30px;
+    padding:12px 22px;
     cursor:pointer;
     transition:.3s;
 }
@@ -66,22 +91,22 @@ body.dark::before{
     box-shadow:0 0 20px rgba(37,99,235,.8);
 }
 
-
+/* CARD */
 
 .card{
     width:450px;
     padding:35px;
-
     text-align:center;
+
+    color:white;
 
     border-radius:25px;
 
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.08);
 
-    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(15px);
 
-    color:white;
+    border:1px solid rgba(255,255,255,.15);
 
     box-shadow:
     0 15px 40px rgba(0,0,0,.4);
@@ -92,10 +117,10 @@ body.dark::before{
 }
 
 body.dark .card{
-    background:rgba(10,15,25,.75);
+    background:rgba(0,0,0,.55);
 }
 
-
+/* IMAGE */
 
 .profile-img{
     width:150px;
@@ -109,18 +134,16 @@ body.dark .card{
     margin-bottom:15px;
 
     animation:glowPulse 3s infinite;
-
-    transition:.4s;
 }
 
 .profile-img:hover{
-    transform:scale(1.08) rotate(5deg);
+    transform:scale(1.05);
 }
 
-
+/* TEXT */
 
 h1{
-    font-size:2.3rem;
+    font-size:2.2rem;
     margin-bottom:5px;
 }
 
@@ -138,32 +161,30 @@ a{
     color:white;
 }
 
+/* SKILLS */
 
 .skills{
     list-style:none;
-    margin-top:20px;
-
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:10px;
+    margin-top:20px;
 }
 
 .skills li{
-    background:rgba(255,255,255,.2);
-
-    padding:8px 15px;
-
+    background:rgba(255,255,255,.15);
+    padding:8px 14px;
     border-radius:20px;
-
     transition:.3s;
 }
 
 .skills li:hover{
-    transform:translateY(-5px) scale(1.05);
-    background:rgba(255,255,255,.35);
+    transform:translateY(-4px);
+    background:rgba(255,255,255,.3);
 }
 
+/* ANIMATIONS */
 
 @keyframes fadeUp{
     from{
@@ -180,7 +201,6 @@ a{
     0%,100%{
         transform:translateY(0);
     }
-
     50%{
         transform:translateY(-10px);
     }
@@ -190,9 +210,8 @@ a{
     0%,100%{
         box-shadow:0 0 10px rgba(255,255,255,.4);
     }
-
     50%{
-        box-shadow:0 0 30px rgba(255,255,255,1);
+        box-shadow:0 0 30px rgba(0,255,255,.9);
     }
 }
 
